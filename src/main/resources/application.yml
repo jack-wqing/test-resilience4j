@@ -1,0 +1,17 @@
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      failureRateThreshold: 50
+      slowCallRateThreshold: 100
+      slowCallDurationThreshold: 6000ms
+      permittedNumberOfCallsInHalfOpenState: 10
+      slidingWindowType: COUNT_BASED
+      slidingWindowSize: 100
+      minimumNumberOfCalls: 100
+      waitDurationInOpenState: 6000ms
+      automaticTransitionFromOpenToHalfOpenEnabled: false
+
+resilience4j.bulkhead:
+  configs:
+    default:
+      maxConcurrentCalls: 50
